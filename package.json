@@ -1,0 +1,28 @@
+{
+  "name": "hitlist",
+  "version": "1.0.0",
+  "description": "Carry your commands with you anywhere and run them with one hit!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hit",
+    "hitlist",
+    "commands",
+    "group"
+  ],
+  "bin": {
+    "hit": "./index.js"
+  },
+  "author": "Ayodeji Osasona",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^4.1.2",
+    "commander": "^9.2.0",
+    "inquirer": "^8.2.2",
+    "mongoose": "^6.3.1",
+    "shelljs": "^0.8.5"
+  }
+}
