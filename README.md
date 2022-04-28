@@ -4,9 +4,11 @@
 
 #### Requirements
 
-> NodeJS >= 16.0.0
-> Node Package Manager >= 6.0.0
-> Internet Connection
+> - NodeJS >= 16.0.0
+
+> - Node Package Manager >= 6.0.0
+
+> - Internet Connection
 
 #### Installation
 
