@@ -1,4 +1,4 @@
-# Hit List
+# Hit List 🚀
 
 #### Your personal **online** commands manager
 
@@ -32,6 +32,8 @@ This section contains everything related to your Hit List account, to reset your
 
 #### Create a new Hit List account
 
+Create a new Hit List account from the terminal, you can also do this on the webiste at https://hitlist.dev
+
 > hit join
 
 OR
@@ -39,6 +41,8 @@ OR
 > hit j
 
 #### Login to your account
+
+Login to your Hit List. You need to be logged in to use Hit List
 
 > hit login
 
@@ -48,6 +52,8 @@ OR
 
 #### View Current User
 
+View who is currently logged in
+
 > hit me
 
 OR
@@ -55,6 +61,8 @@ OR
 > hit m
 
 #### Sign out of Hit List CLI
+
+Logout of your Hit List account
 
 > hit logout
 
@@ -67,6 +75,8 @@ OR
 This section contains everything related to Hit Lists 🔫
 
 #### Create a new Hit List
+
+Add a new list to your collection, or pool (get the reference?)
 
 > hit create [LIST NAME]
 
