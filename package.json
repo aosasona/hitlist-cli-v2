@@ -1,11 +1,8 @@
 {
   "name": "hitlist-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Your personal online commands manager - take your commands with you anywhere in the cloud and run them with one hit!",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "hit",
     "hitlist",

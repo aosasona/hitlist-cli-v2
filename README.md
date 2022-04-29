@@ -50,6 +50,14 @@ OR
 
 > hit l
 
+IMPORTANT : On MAC and LINUX systems, you need to run the following command instead
+
+> sudo hit login
+
+OR
+
+> sudo hit l
+
 #### View Current User
 
 View who is currently logged in
