@@ -6,23 +6,23 @@
 
 > - NodeJS >= 16.0.0
 
-> - Node Package Manager >= 6.0.0
+> - Node Package Manager (NPM) >= 6.0.0
 
 > - Internet Connection
 
-#### Installation
+# Installation
 
 To install **Hit List**, run the following command in your terminal
 
 ###### If you're running MacOS/Linux,
 
-> sudo npm i -g hitlist
+> sudo npm i -g hitlist-cli
 
 And enter your PC's password
 
 ###### For other Operating Systems,
 
-> npm i -g hitlist
+> npm i -g hitlist-cli
 
 # Usage
 

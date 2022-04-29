@@ -1,7 +1,7 @@
 {
-  "name": "hitlist",
-  "version": "1.0.0",
-  "description": "Carry your commands with you anywhere and run them with one hit!",
+  "name": "hitlist-cli",
+  "version": "1.0.1",
+  "description": "Your personal online commands manager - take your commands with you anywhere in the cloud and run them with one hit!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
