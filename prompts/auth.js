@@ -25,7 +25,8 @@ const signupPrompt = [
   {
     type: "password",
     name: "password",
-    message: "Password : ",
+    message:
+      "Password [At least one UPPERCASE, one LOWERCASE character, one SYMBOL & one NUMBER] : ",
   },
   {
     type: "password",

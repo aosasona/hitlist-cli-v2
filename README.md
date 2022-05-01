@@ -28,11 +28,11 @@ And enter your PC's password
 
 ## Account & Authentication
 
-This section contains everything related to your Hit List account, to reset your password, you would have to do that on the website at https://hitlist.dev
+This section contains everything related to your Hit List account, to reset your password, you would have to do that on the website at https://www.hitlist.dev
 
 #### Create a new Hit List account
 
-Create a new Hit List account from the terminal, you can also do this on the webiste at https://hitlist.dev
+Create a new Hit List account from the terminal, you can also do this on the webiste at https://www.hitlist.dev
 
 > hit join
 

@@ -16,7 +16,7 @@ const storePath = path.join(__dirname, "../", "store", "data.json");
 exports.createList = (name, hits, description, visibility) => {
   fs.readFile(storePath, (err, data) => {
     const store = JSON.parse(data);
-
+    shell.echo("Creating list...");
     try {
       if (store.token === undefined) {
         shell.echo(chalk.red("You must be logged in!"));
@@ -72,6 +72,8 @@ exports.getAll = () => {
   fs.readFile(storePath, (err, data) => {
     const store = JSON.parse(data);
 
+    shell.echo("Fetching your lists...");
+
     try {
       if (store.token === undefined) {
         shell.echo(chalk.red("You must be logged in!"));
@@ -82,6 +84,7 @@ exports.getAll = () => {
           Authorization: "Bearer " + store.token,
         },
       };
+
       axios
         .post(`${url}/lists/view`, {}, headers)
         .then((response) => {
