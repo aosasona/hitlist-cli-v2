@@ -16,13 +16,17 @@ To install **Hit List**, run the following command in your terminal
 
 ###### If you're running MacOS/Linux,
 
-> sudo npm i -g hitlist-cli
+```
+sudo npm i -g hitlist-cli
+```
 
 And enter your PC's password
 
 ###### For other Operating Systems,
 
-> npm i -g hitlist-cli
+```
+npm i -g hitlist-cli
+```
 
 # Usage
 
