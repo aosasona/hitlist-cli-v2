@@ -10,9 +10,10 @@ const listPrompt = [
     message: "Description : ",
   },
   {
-    type: "input",
+    type: "list",
     name: "visibility",
-    message: "Public (Y/N) : ",
+    message: "List visibility : ",
+    choices: ["Public", "Private"],
   },
 ];
 

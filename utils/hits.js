@@ -193,14 +193,24 @@ program
  */
 program
   .command("push <message>")
-  .alias("git")
+  .alias("p")
   .description("Make a commit to a SET repository")
   .action((message) => {
     const gitCommit = `git add . && git commit -am '${message}' && git push`;
     if (shell.exec(gitCommit).code === 1) {
-      shell.echo(chalk.red("Unable to make commit"));
+      shell.echo(
+        chalk.red(
+          "--------------------------------------------------------------------------------\nUnable to make commit to repository\n--------------------------------------------------------------------------------"
+        )
+      );
     } else {
-      shell.echo(chalk.green(`Pushed successfully - ${message}`));
+      shell.echo(
+        chalk.green(
+          `--------------------------------------------------------------------------------\nPushed successfully - ${chalk.underline(
+            message
+          )} \n--------------------------------------------------------------------------------`
+        )
+      );
     }
   });
 
