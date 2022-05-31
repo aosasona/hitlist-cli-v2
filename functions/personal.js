@@ -313,12 +313,6 @@ const deleteList = (list) => {
     //Echo status
     shell.echo(chalk.yellow(chalk.yellow(">> Destroying list...")));
 
-    //Delete the list locally
-    if (checkHit(list)) {
-      const newList = deleteHit(list);
-      fs.writeFileSync(dataPath, JSON.stringify(newList));
-    }
-
     const headers = {
       headers: {
         Authorization: "Bearer " + authStore.token,
@@ -328,17 +322,26 @@ const deleteList = (list) => {
       .delete(`${url}/list/${list}`, headers, {})
       .then((response) => {
         const com = chalk.white(list);
+
+        //Delete the list locally
+        if (checkHit(list)) {
+          const newList = deleteHit(list);
+          fs.writeFileSync(dataPath, JSON.stringify(newList));
+        }
+
+        //Output
         output(
           chalk.green(
             `--------------------------------------------------------------------------------\n💣 Destroyed ${com} successfully!\n--------------------------------------------------------------------------------`
           )
         );
+        return;
       })
       .catch((error) => {
         output(chalk.red.bold("Something went wrong (cloud)"));
       });
   } catch (err) {
-    output(chalk.red(err.message));
+    output(chalk.red("Something went wrong!"));
   }
 };
 

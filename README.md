@@ -2,7 +2,7 @@
 
 #### Your personal **online** commands manager
 
-Note: HitList will now save and sync hits locally and with the cloud.
+Note: HitList will now save and sync hits locally and with the cloud. You also now need to use the sudo prefix on MacOS and Linux.
 
 #### Requirements
 

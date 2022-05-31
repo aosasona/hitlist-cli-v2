@@ -41,8 +41,9 @@ exports.login = (credential, password) => {
       output(
         chalk.bold.red(
           "--------------------------------------------------------------------------------\nFailed to sign you in - " +
-            err.response.data.message +
-            "\n--------------------------------------------------------------------------------"
+            err?.response?.data?.message ||
+            "Something went wrong" +
+              "\n--------------------------------------------------------------------------------"
         )
       );
       return;
