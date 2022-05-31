@@ -165,7 +165,7 @@ const getAll = () => {
 };
 
 /**
- * @description Get a single list
+ * @description Execute a single owned list
  */
 const getList = (name) => {
   try {

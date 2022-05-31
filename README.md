@@ -2,6 +2,8 @@
 
 #### Your personal **online** commands manager
 
+Note: HitList will now save and sync hits locally and with the cloud.
+
 #### Requirements
 
 > - NodeJS >= 16.0.0
@@ -104,6 +106,8 @@ You would have to enter the:
 
 ## View all lists
 
+This will show all lists you own, it will attempt to fetch it locally first by default.
+
 ```
 hit list
 ```
@@ -116,7 +120,7 @@ hit ls
 
 ## Execute a personal list
 
-This will automatically execute a list you **OWN**
+This will automatically execute a list you **OWN** locally first and then try to execute it online.
 
 ```
 hit run [LIST NAME]
@@ -138,10 +142,18 @@ hit run -p [USERNAME] [LIST NAME]
 
 ## Delete a list
 
-This will delete a list you **OWN**
+This will delete a list you **OWN** locally and online
 
 ```
 hit delete [LIST NAME]
+```
+
+## New: Sync with HitList Cloud
+
+This will download and save all lists from the cloud to make them available offline.
+
+```
+hit sync
 ```
 
 # Extra
