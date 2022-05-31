@@ -26,142 +26,156 @@ And enter your PC's password
 
 # Usage
 
-## Account & Authentication
+# Account & Authentication
 
 This section contains everything related to your Hit List account, to reset your password, you would have to do that on the website at https://www.hitlist.dev
 
-#### Create a new Hit List account
+## Create a new Hit List account
 
 Create a new Hit List account from the terminal, you can also do this on the webiste at https://www.hitlist.dev
 
-> hit join
+```
+hit join
+```
 
 OR
 
-> hit j
+```
+hit j
+```
 
-#### Login to your account
+## Login to your account
 
 Login to your Hit List. You need to be logged in to use Hit List
 
-> hit login
-
-OR
-
-> hit l
+```
+hit login
+```
 
 IMPORTANT : On MAC and LINUX systems, you need to run the following command instead
 
-> sudo hit login
+```
+sudo hit login
+```
 
-OR
-
-> sudo hit l
-
-#### View Current User
+## View Current User
 
 View who is currently logged in
 
-> hit me
+```
+hit me
+```
 
-OR
-
-> hit m
-
-#### Sign out of Hit List CLI
+## Sign out of Hit List CLI
 
 Logout of your Hit List account
 
-> hit logout
+```
+hit logout
+```
 
-OR
-
-> hit d
-
-## Lists
+# Lists
 
 This section contains everything related to Hit Lists 🔫
 
-#### Create a new Hit List
+## Create a new Hit List
 
 Add a new list to your collection, or pool (get the reference?)
 
-> hit create [LIST NAME]
+```
+hit create [LIST NAME]
+```
 
 OR
 
-> hit c [LIST NAME]
+```
+hit c [LIST NAME]
+```
 
 You would have to enter the:
 
 - Hits separated by commas (eg. mkdir test-folder, cd test-folder)
 - Description of the list (eg. This is my test list)
-- Visibility of the list (Y/N)
+- Visibility of the list
 
-#### View all lists
+## View all lists
 
-> hit list
+```
+hit list
+```
 
 OR
 
-> hit ls
+```
+hit ls
+```
 
-#### Execute a personal list
+## Execute a personal list
 
 This will automatically execute a list you **OWN**
 
-> hit run [LIST NAME]
+```
+hit run [LIST NAME]
+```
 
 OR
 
-> hit r [LIST NAME]
+```
+hit r [LIST NAME]
+```
 
-#### Execute a public list
+## Execute a public list
 
 This will automatically execute a **PUBLIC** list from a user's pool (collection of lists)
 
-> hit run -p [USERNAME] [LIST NAME]
+```
+hit run -p [USERNAME] [LIST NAME]
+```
 
-OR
-
-> hit r -p [USERNAME] [LIST NAME]
-
-#### Delete a list
+## Delete a list
 
 This will delete a list you **OWN**
 
-> hit delete [LIST NAME]
+```
+hit delete [LIST NAME]
+```
 
-OR
-
-> hit x [LIST NAME]
-
-## Extra
+# Extra
 
 Other things included for you - these will be updated over time
 
-#### Clear Terminal
+## Clear Terminal
 
 This will clear ALL the terminal/console output
 
-> hit clean
+```
+hit clean
+```
 
 OR
 
-> hit c
+```
+hit c
+```
 
-#### Push to a set GIT repository
+## Push to a set GIT repository
 
 This will push to a pre-configured GIT repository
 
-> hit push [YOUR COMMIT MESSAGE]
+```
+hit push [YOUR COMMIT MESSAGE]
+```
 
 OR
 
-> hit git [YOUR COMMIT MESSAGE]
+```
+hit p [YOUR COMMIT MESSAGE]
+```
 
-#### HELP
+## HELP
 
-> hit help [COMMAND]
+```
+hit help [COMMAND]
+```
 
 If you need to report a bug, request a feature or request for help, contact **hit@hitlist.dev**

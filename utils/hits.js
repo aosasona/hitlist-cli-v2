@@ -12,6 +12,7 @@ const {
   getPublicList,
   deleteList,
   createList,
+  syncLists,
 } = require("../functions/personal");
 const { loginPrompt, signupPrompt } = require("../prompts/auth");
 const { listPrompt, deletePrompt } = require("../prompts/list");
@@ -184,6 +185,17 @@ program
           shell.error(chalk.red("Something went wrong!"));
         }
       });
+  });
+
+/**
+ * @description Sync lists
+ */
+program
+  .command("sync")
+  .alias("s")
+  .description("Fetch and save cloud lists")
+  .action(() => {
+    syncLists();
   });
 
 /* ============== EXTRAS ============== */

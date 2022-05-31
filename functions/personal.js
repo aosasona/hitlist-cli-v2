@@ -100,11 +100,11 @@ const createList = (name, hits, description, visibility) => {
         );
       })
       .catch((error) => {
-        output(chalk.red.bold(error.response.data.message));
+        output(chalk.red.bold("Something went wrong (cloud)"));
       });
     // return;
   } catch (error) {
-    output(chalk.red(err.message));
+    output(chalk.red("Oops! Something went wrong"));
   }
 };
 
@@ -147,7 +147,7 @@ const getAll = () => {
           });
         })
         .catch((error) => {
-          output(chalk.red.bold(error.response.data.message));
+          output(chalk.red.bold("Something went wrong (cloud)"));
         });
     } else {
       const Lists = dataStore;
@@ -160,7 +160,7 @@ const getAll = () => {
       });
     }
   } catch (err) {
-    output(chalk.red(err.message));
+    output(chalk.red("Oops! Something went wrong"));
   }
 };
 
@@ -211,7 +211,7 @@ const getList = (name) => {
           }
         })
         .catch((error) => {
-          shell.echo(chalk.red.bold(error.response.data.message));
+          shell.echo(chalk.red.bold("Something went wrong (cloud)"));
         });
     } else {
       shell.echo(chalk.yellow(">> Executing locally..."));
@@ -238,7 +238,7 @@ const getList = (name) => {
       }
     }
   } catch (err) {
-    shell.echo(chalk.red(err.message));
+    shell.echo(chalk.red("Oops! Something went wrong"));
   }
 };
 
@@ -293,10 +293,10 @@ const getPublicList = (name, username) => {
         }
       })
       .catch((error) => {
-        shell.echo(chalk.red.bold(error.response.data.message));
+        shell.echo(chalk.red.bold("Something went wrong (cloud)"));
       });
   } catch (err) {
-    shell.echo(chalk.red(err.message));
+    shell.echo(chalk.red("Oops! Something went wrong"));
   }
 };
 
@@ -335,11 +335,58 @@ const deleteList = (list) => {
         );
       })
       .catch((error) => {
-        output(chalk.red.bold(error.response.data.message));
+        output(chalk.red.bold("Something went wrong (cloud)"));
       });
   } catch (err) {
     output(chalk.red(err.message));
   }
 };
 
-module.exports = { createList, getAll, getList, deleteList, getPublicList };
+/**
+ * @description Sync lists
+ */
+const syncLists = () => {
+  try {
+    if (!authStore.token) {
+      shell.echo(chalk.red("You must be logged in!"));
+      return;
+    }
+
+    //Echo status
+    shell.echo(chalk.yellow(chalk.yellow(">> Syncing lists...")));
+
+    const headers = {
+      headers: {
+        Authorization: "Bearer " + authStore.token,
+      },
+    };
+
+    axios
+      .post(`${url}/lists/view`, {}, headers)
+      .then((response) => {
+        const Lists = response.data.data;
+        fs.writeFileSync(dataPath, JSON.stringify(Lists));
+        output(
+          chalk.green(
+            `--------------------------------------------------------------------------------\n💣 Synced lists successfully!\n--------------------------------------------------------------------------------`
+          )
+        );
+      })
+      .catch((error) => {
+        output(
+          chalk.red.bold("Something went wrong - please check your connection!")
+        );
+      });
+  } catch (err) {
+    output(chalk.red("Oops! Something went wrong"));
+  }
+};
+
+module.exports = {
+  createList,
+  getAll,
+  getList,
+  deleteList,
+  getPublicList,
+  syncLists,
+};
