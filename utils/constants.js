@@ -30,7 +30,7 @@ const dataStore = JSON?.parse(readData);
  * @returns {boolean}
  */
 const checkHit = (name) => {
-  const filtered = dataStore.filter((hit) => {
+  const filtered = dataStore?.filter((hit) => {
     if (hit.name === name) {
       return hit;
     }
@@ -49,7 +49,7 @@ const checkHit = (name) => {
  * @returns {object}
  */
 const fetchHit = (name) => {
-  const filtered = dataStore.filter((hit) => {
+  const filtered = dataStore?.filter((hit) => {
     if (hit.name === name) {
       return hit;
     }
@@ -58,4 +58,18 @@ const fetchHit = (name) => {
   return filtered[0];
 };
 
-module.exports = { url, authStore, dataStore, checkHit, fetchHit };
+/**
+ * @description Delete a local list
+ * @param {*} name
+ * @returns {object}
+ */
+const deleteHit = (name) => {
+  const filtered = dataStore?.filter((hit) => {
+    if (hit.name !== name) {
+      return hit;
+    }
+  });
+  return filtered;
+};
+
+module.exports = { url, authStore, dataStore, checkHit, fetchHit, deleteHit };

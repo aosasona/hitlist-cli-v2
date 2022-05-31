@@ -5,7 +5,7 @@ const output = require("./output");
 const chalk = require("chalk");
 const shell = require("shelljs");
 var slugify = require("slugify");
-const { checkHit, fetchHit } = require("../utils/constants");
+const { checkHit, fetchHit, deleteHit } = require("../utils/constants");
 
 //API URL
 const url = require("../utils/constants").url;
@@ -247,7 +247,7 @@ const getList = (name) => {
  */
 const getPublicList = (name, username) => {
   try {
-    if (authStore.token) {
+    if (!authStore.token) {
       shell.echo(chalk.red("You must be logged in!"));
       return;
     }
@@ -305,13 +305,19 @@ const getPublicList = (name, username) => {
  */
 const deleteList = (list) => {
   try {
-    if (authStore.token) {
+    if (!authStore.token) {
       shell.echo(chalk.red("You must be logged in!"));
       return;
     }
 
     //Echo status
     shell.echo(chalk.yellow(chalk.yellow(">> Destroying list...")));
+
+    //Delete the list locally
+    if (checkHit(list)) {
+      const newList = deleteHit(list);
+      fs.writeFileSync(dataPath, JSON.stringify(newList));
+    }
 
     const headers = {
       headers: {
