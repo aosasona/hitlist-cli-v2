@@ -5,7 +5,7 @@
 
 #### Your personal **online** commands manager
 
-Note: HitList will now save and sync hits locally and with the cloud. You also now need to use the sudo prefix on MacOS and Linux.
+Note: HitList will now save and sync hits locally and with the cloud.
 
 #### Requirements
 
@@ -13,7 +13,7 @@ Note: HitList will now save and sync hits locally and with the cloud. You also n
 
 > Node Package Manager (NPM) >= 6.0.0
 
-> Internet Connection
+> An Internet Connection
 
 # Installation
 

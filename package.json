@@ -1,6 +1,6 @@
 {
   "name": "hitlist-cli",
-  "version": "2.1.0",
+  "version": "2.1.10",
   "description": "Your personal commands manager - take your commands with you anywhere in the cloud and run them in one hit",
   "main": "./dist/index.js",
   "scripts": {
