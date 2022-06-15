@@ -1,30 +1,23 @@
 # Hit List 🚀
 
+- Author - Ayodeji
+- Documentation - https://www.hitlist.dev/docs/
+
 #### Your personal **online** commands manager
 
 Note: HitList will now save and sync hits locally and with the cloud. You also now need to use the sudo prefix on MacOS and Linux.
 
 #### Requirements
 
-> - NodeJS >= 16.0.0
+> NodeJS >= 14.0.0
 
-> - Node Package Manager (NPM) >= 6.0.0
+> Node Package Manager (NPM) >= 6.0.0
 
-> - Internet Connection
+> Internet Connection
 
 # Installation
 
 To install **Hit List**, run the following command in your terminal
-
-###### If you're running MacOS/Linux,
-
-```
-sudo npm i -g hitlist-cli
-```
-
-And enter your PC's password
-
-###### For other Operating Systems,
 
 ```
 npm i -g hitlist-cli
@@ -44,24 +37,12 @@ Create a new Hit List account from the terminal, you can also do this on the web
 hit join
 ```
 
-OR
-
-```
-hit j
-```
-
 ## Login to your account
 
 Login to your Hit List. You need to be logged in to use Hit List
 
 ```
 hit login
-```
-
-IMPORTANT : On MAC and LINUX systems, you need to run the following command instead
-
-```
-sudo hit login
 ```
 
 ## View Current User
@@ -194,4 +175,10 @@ hit p [YOUR COMMIT MESSAGE]
 hit help [COMMAND]
 ```
 
-If you need to report a bug, request a feature or request for help, contact **hit@hitlist.dev**
+You can also run the command below to open the online docs
+
+```
+hit doc
+```
+
+If you need to report a bug, request a feature or request for help, contact **hit@hitlist.dev** or reach out to me on [Twitter](https://twitter.com/trulyao)
