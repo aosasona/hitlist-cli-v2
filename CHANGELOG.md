@@ -8,3 +8,7 @@
 - Improved cloud syncing
 - Removed the need to use sudo on MacOS and Linux
 - Added reset command
+
+#### Version 2.2.1
+
+- Fixed bin issue

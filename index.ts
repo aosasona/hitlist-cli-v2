@@ -33,10 +33,10 @@ if (notifier.update) {
   const { latest } = notifier.update;
   console.log(
     chalk.yellow(
-      `You are running an older version of Hitlist (${pkg.version}) \n
-    Run ${chalk.green(
-      `yarn global add hitlist-cli`
-    )} to install version ${latest}.`
+      `You are running an older version of Hitlist (${pkg.version})
+\nRun ${chalk.green(
+        `yarn global add hitlist-cli`
+      )} to install version ${latest}.`
     )
   );
 }
