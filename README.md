@@ -31,7 +31,7 @@ This section contains everything related to your Hit List account, to reset your
 
 ## Create a new Hit List account
 
-Create a new Hit List account from the terminal, you can also do this on the webiste at https://www.hitlist.dev
+Create a new Hit List account from the terminal, you can also do this on the website at https://www.hitlist.dev
 
 ```
 hit join
