@@ -14,10 +14,8 @@ interface Body {
   password: string;
 }
 
-// Login function
 const login = async (credential: string, password: string) => {
   try {
-    // Construct data body
     const body: Body = {
       credential,
       password,
@@ -49,7 +47,6 @@ const login = async (credential: string, password: string) => {
   }
 };
 
-// Default export
 const initiateLogin = () => {
   shell.echo(
     chalk.bgGreen.black.bold(

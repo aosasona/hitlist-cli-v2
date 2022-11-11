@@ -1,6 +1,6 @@
 {
   "name": "hitlist-cli",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Your personal commands manager - take your commands with you anywhere in the cloud and run them in one hit",
   "main": "./dist/index.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "cloud",
     "command",
     "line",
-    "terminal"
+    "terminal",
+    "cli"
   ],
   "author": "Ayodeji Osasona",
   "license": "MIT",

@@ -1,29 +1,22 @@
-import axios, { AxiosInstance } from "axios";
+import axios, {AxiosInstance} from "axios";
+
 const Conf = require("conf");
 
 // Data sto
 const store = new Conf("hitlist");
 
-const API_URL = "https://hitlist-server.herokuapp.com/v1";
+const API_URL = "https://hitlist-api-v1.cr.thio.cloud/v1";
 
-/**
- * @desc Create requests with user token
- */
 const auth = (): AxiosInstance => {
   const token: string = store.get("auth.token");
-  const config = axios.create({
+  return axios.create({
     baseURL: API_URL,
     headers: {
       Authorization: token ? `Bearer ${token}` : "",
     },
   });
-
-  return config;
 };
 
-/**
- * @desc Create requests for unprotected routes
- */
 const noauth = (): AxiosInstance => {
   return axios.create({
     baseURL: API_URL,

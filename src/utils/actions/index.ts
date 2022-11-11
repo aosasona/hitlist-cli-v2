@@ -9,19 +9,14 @@ const dataStore = store.get("lists") || [];
 const exists = (name: string): boolean => {
   const filtered = dataStore.filter((current: any) => current.name === name);
 
-  if (filtered?.length > 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return filtered?.length > 0;
 };
 
 /**
  * @desc - Find ONE hit
  */
 const find = (name: string) => {
-  const hit = dataStore.find((current: any) => current.name === name);
-  return hit;
+  return dataStore.find((current: any) => current.name === name);
 };
 
 /**

@@ -23,25 +23,20 @@ import {
 } from "./src/commands";
 import { log } from "./src/utils";
 
-// Update Notifier
 const notifier: UpdateNotifier = updateNotifier({
   pkg,
   updateCheckInterval: 1000 * 60 * 60 * 24, // 1 day
 });
 
-if (notifier.update) {
-  const { latest } = notifier.update;
+if (notifier?.update) {
+  const { latest } = notifier?.update;
   console.log(
     chalk.yellow(
-      `You are running an older version of Hitlist (${pkg.version})
-\nRun ${chalk.green(
-        `yarn global add hitlist-cli`
-      )} to install version ${latest}.`
+      `You are running an older version of Hit-list (${pkg.version})\nRun ${chalk.green(`yarn global add hitlist-cli`)} to install version ${latest}.`
     )
   );
 }
 
-// New command instance
 const program = new Command();
 
 /* =============== METADATA =============== */
@@ -49,7 +44,7 @@ const program = new Command();
 program
   .name("hit")
   .version(pkg.version, "-V, --version", "show the current version")
-  .description(pkg.description);
+  .description(pkg?.description);
 
 /* =============== ACCOUNT =============== */
 
@@ -90,12 +85,12 @@ program
   .option("-p <user>", "Execute a public list")
   .alias("r")
   .description("Execute a list")
-  .action((command, options) => {
+  .action(async (command, options) => {
     const user = options.p ? options.p : false;
     if (!user) {
-      execute(command);
+      await execute(command);
     } else {
-      executePublic(command, options.p);
+      await executePublic(command, options.p);
     }
   });
 
@@ -139,12 +134,11 @@ program
 program
   .command("push <message>")
   .alias("p")
-  .description("Make a commit to a SET repository")
+  .description("Shortcut to make a commit to a SET repository")
   .action((message) => {
     commit(message);
   });
 
 program.command("reset").description("Reset data store").action(reset);
 
-// Parse the arguments
 program.parse();

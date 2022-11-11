@@ -182,3 +182,5 @@ hit doc
 ```
 
 If you need to report a bug, request a feature or request for help, contact **hit@hitlist.dev** or reach out to me on [Twitter](https://twitter.com/trulyao)
+
+> Version 3 will come with a lot of new features both for the CLI and web, stay tuned!

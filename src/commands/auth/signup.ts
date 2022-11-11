@@ -5,7 +5,6 @@ import prompts from "../../prompts";
 import { log } from "../../utils";
 import { request } from "../../utils";
 
-// Body interface
 interface Body {
   username: string;
   email: string;
@@ -13,7 +12,6 @@ interface Body {
   confirmPassword: string;
 }
 
-// Signup function
 const signup = async (
   username: string,
   email: string,
@@ -21,7 +19,6 @@ const signup = async (
   confirmPassword: string
 ) => {
   try {
-    // Construct data body
     const body: Body = {
       username,
       email,
@@ -29,24 +26,15 @@ const signup = async (
       confirmPassword,
     };
 
-    // Make request
     request
       .noauth()
       .post("/auth/create", body)
       .then(({ data }) => {
-        log(
-          chalk.green(
-            `${data?.message} - Please login using your credentials now by using the "hit login" command`
-          )
-        );
+        log(chalk.green(`${data?.message} - Please login using your credentials now by using the "hit login" command`));
         process.exit(0);
       })
       .catch(({ response }) => {
-        log(
-          chalk.red(
-            `Failed! - ${response?.data?.message || "Something went wrong!"}`
-          )
-        );
+        log(chalk.red(`Failed! - ${response?.data?.message || "Something went wrong!"}`));
         process.exit(1);
       });
   } catch (error) {

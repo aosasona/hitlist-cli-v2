@@ -9,32 +9,24 @@ import { request } from "../../utils";
 // Config store
 const store = new Conf("hitlist");
 
-// Delete function
 const deleteList = async (name: string) => {
   try {
-    // Check is user is logged in
     if (!store.get("auth.token")) {
       log(chalk.red("You are not logged in!"));
       process.exit(1);
     }
 
-    // Check and delete locally
     if (exists(name)) {
       log(chalk.yellow(`>> Deleting list ${name} locally...`));
       deleteAction(name);
     }
 
-    // Delete list from server
     log(chalk.yellow(`>> Deleting list ${name} from the cloud...`));
     request
       .auth()
       .delete(`/list/${name}`)
       .then((response) => {
-        log(
-          chalk.green(
-            `${chalk.greenBright.bold("[SUCCESS]")} List ${name} deleted!`
-          )
-        );
+        log(chalk.green(`${chalk.greenBright.bold("[SUCCESS]")} List ${name} deleted!`));
         process.exit(0);
       })
       .catch((error) => {
@@ -47,19 +39,18 @@ const deleteList = async (name: string) => {
   }
 };
 
-// Initiation function
 const del = (name: string) => {
   prompt(prompts.list.delete)
-    .then((response) => {
-      if (response.confirm.toLowerCase() === "y") {
-        deleteList(name);
+    .then(async (response) => {
+      if (response?.confirm?.toLowerCase() === "y") {
+        await deleteList(name);
       } else {
         log(chalk.red("Aborted!"));
         process.exit(1);
       }
     })
     .catch((error) => {
-      if (error.isTtyError) {
+      if (error?.isTtyError) {
         log(chalk.red("Oops! Hit List is not supported here 😔"));
         process.exit(1);
       } else {
